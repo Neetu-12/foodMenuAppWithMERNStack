@@ -1,0 +1,66 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.Navbar-Content {
+    background-color: rgb(67 50 84);
+    margin-bottom: 1px;
+    height: 48px;
+    padding: 13px;
+    display: flex;
+    justify-content: flex-start;
+    justify-content: flex-end;
+    column-gap: 50rem;
+}
+
+.main-home-page {
+    filter: drop-shadow(8px 8px 10px rgb(245, 162, 162));
+    font-style: italic;
+    color: white;
+    font-size: 1.4rem;
+    width: 10rem;
+    margin-top: 9px;
+    margin-left:2.1rem;
+    padding-left: 1rem;
+
+}
+
+.home-page{
+    text-decoration: none;
+    color: white;
+    margin-left: 0.1rem;
+    /* border: 2px solid black; */
+}
+
+.nav1 {
+    padding: 4px;
+    cursor: pointer
+}
+
+.userName{
+    color: white;
+}
+
+.links a {
+    /* color: aqua; */
+    color: white;
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid black; */
+    gap: 109px;
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-top: 0px;
+    width: 36rem;
+    filter: drop-shadow(8px 8px 10px rgb(228, 124, 219));
+    padding-right: 50px;
+}
+
+a:link {
+    color: white;
+} 

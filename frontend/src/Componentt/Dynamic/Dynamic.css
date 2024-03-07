@@ -1,0 +1,44 @@
+.deliveryman {
+    /* background-image: url("../images/delivery.png"); */
+    width: 1rem;
+}
+
+.image1 {
+    width: 94.9rem;
+    height: 23.5rem;
+    padding-bottom: 3.5rem;
+}
+
+.img2 {
+    width: 19.9rem;
+    height: 12.1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+.slot1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5rem;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-span1 {
+    width: 50rem;
+    padding: 3rem;
+    font-size: 19px;
+    font-style: italic;
+    word-spacing: 6px;
+    line-height: 1.6;
+    border-radius: 3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

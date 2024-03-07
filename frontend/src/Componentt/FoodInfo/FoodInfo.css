@@ -1,0 +1,16 @@
+.Inner-foodinfo-content {
+    margin-top: 2rem;
+    border: 1px solid black;
+    width: 19rem;
+    padding: 4rem;
+    padding-top: 5rem;
+    padding-right: 5rem;
+    row-gap: 4rem;
+    filter: drop-shadow(8px 8px 10px gray);
+    height: 22rem;
+    border-radius: 5rem;
+}
+
+.button2{
+    cursor: pointer;
+}
