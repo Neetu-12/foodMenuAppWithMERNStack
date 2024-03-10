@@ -10,6 +10,7 @@ import { useGlobalContext } from './Componentt/Context/context';
 import { Footer } from './Componentt/footer/Footer'
 import { Dynamic } from './Componentt/Dynamic/Dynamic';
 import { FoodInfo } from './Componentt/FoodInfo/FoodInfo'
+import Order from './Componentt/Order/Order'
 
 const App = () => {
   const data = useGlobalContext();
@@ -19,13 +20,14 @@ const App = () => {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/Home" exact Component={Home} />
-            <Route path="/Signup" exact Component={Signup} />
-            <Route path="/Signin" exact Component={Signin} />
-            <Route path="/Logout" exact Component={Logout} />
-            <Route path="/Dynamic" exact Component={Dynamic} />
-            <Route path="/Menu" exact Component={Menu} />
-            <Route path="/FoodInfo" exact Component={FoodInfo} />
+            <Route path="/foodMenuAppWithMERNStack" exact Component={Home} />
+            <Route path="/foodMenuAppWithMERNStack/Signup" exact Component={Signup} />
+            <Route path="/foodMenuAppWithMERNStack/Signin" exact Component={Signin} />
+            <Route path="/foodMenuAppWithMERNStack/Logout" exact Component={Logout} />
+            <Route path="/foodMenuAppWithMERNStack/Dynamic" exact Component={Dynamic} />
+            <Route path="/foodMenuAppWithMERNStack/Menu" exact Component={Menu} />
+            <Route path="/foodMenuAppWithMERNStack/FoodInfo" exact Component={FoodInfo} />
+            <Route path="/foodMenuAppWithMERNStack/Order" exact Component={Order} />
           </Routes>
           <Footer />
         </Router>

@@ -7,14 +7,14 @@ const bcrypt = require("bcrypt");
 const hashPassWord = require("../Middleware/hashPassword");
 
 router.post("/register", hashPassWord, async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     try {
         if (req.body.userName != undefined) {
             await knex("user").insert(req.body); 
             res.send("New registration done.")
         }
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.send("This user is already exist.")
     }
 });

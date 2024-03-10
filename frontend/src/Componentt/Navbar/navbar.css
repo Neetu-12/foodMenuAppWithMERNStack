@@ -31,11 +31,17 @@
     color: white;
     margin-left: 0.1rem;
     /* border: 2px solid black; */
+    border: none;
+    outline: hidden;
+}
+option{
+    color: white;
 }
 
-.nav1 {
+select.nav1 {
     padding: 4px;
-    cursor: pointer
+    cursor: pointer;
+    background-color:  rgb(67 50 84);
 }
 
 .userName{

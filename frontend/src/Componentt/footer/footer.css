@@ -2,6 +2,10 @@
 .footer {
     background-color: rgb(67 50 84);
     height: 18rem;
+    display: flex;
+    flex-direction: column;
+    /* align-self: auto; */
+    /* justify-content: space-evenly; */
 }
 
 .footer0 {
@@ -10,7 +14,6 @@
     height: 2rem;
     margin: 6rem 0rem 0rem 3rem;
     margin-top: 0rem;
-    
     padding: 5rem;
     line-height: 1.6;
 }
@@ -22,6 +25,8 @@
     margin: -11rem 0rem 0rem 45rem;
     padding: 3rem;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer2{

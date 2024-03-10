@@ -14,7 +14,7 @@ export const Home = () => {
     if (sessionStorage.getItem("foodtype")) {
       sessionStorage.removeItem("foodtype")
       sessionStorage.setItem("foodtype", type)
-      navigation("../Dynamic")
+      navigation("./Dynamic")
     } else {
       sessionStorage.setItem("foodtype", type)
     }

@@ -1,0 +1,121 @@
+
+.foodinfo {
+    padding: 10px;
+  }
+  
+  .foodinfo span {
+    word-spacing: 2px;
+    font-style: inherit;
+    font-size: 16px;
+  }
+  
+  .foodbottem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .foodbottem {
+    float: right;
+  }
+  
+  .foodbottem .logo img {
+    width: 300px;
+  }
+  
+  .billing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing:  border-box;
+    padding: 10px;
+  }
+  
+  .billingcontainer{
+    background-color:  #f4f4f4;
+    border: solid 1px #dcdcdc;
+    box-shadow: inset 0 -8px 8px -8px #dcdcdc;  
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3) inset;
+    width: 60vh;
+  }
+  
+  .maintab{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  
+  h5{
+    float: right;
+    text-align: right;
+  }
+  
+  li{
+    float: left;
+  }
+  
+  .billingcontainer  div {
+    /* padding: 0 !important; */
+    margin: 0 !important;
+  }
+  
+  .userlocaoval{
+    max-width: 15vh;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+}
+
+.food {
+    /* background-image: url("../../assets/insertfoodimg.png"); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foodform {
+    padding: 50px;
+    margin: 50px;
+    border: 2px solid black;
+    background-color: #5e6a816e;
+    width: 800px;
+    border-radius: 20px;
+}
+
+.foodform h1 {
+    text-align: center;
+}
+.foodform div {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.foodform label {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.foodform input {
+    padding: 10px;
+    margin: 10px;
+    background: none;
+    border: #8888;
+    border-bottom: 1px solid black;
+    font-size: 24px;
+}
+
+
+.foodform button {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: beige;
+    float: right;
+}
