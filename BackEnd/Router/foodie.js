@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const knex = require("../Config/dbConfig");
+const db = require("../Config/dbConfig");
 
-router.get("/foodie",(req,res)=>{
+router.get("/", (req, res) => {
     res.send("Menus are ok !")
 });
 
-module.exports = router ;
+module.exports = router;

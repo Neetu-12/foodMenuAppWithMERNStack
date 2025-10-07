@@ -1,11 +1,19 @@
 const express = require("express");
 const router = express.Router();
 
-const knex = require("../Config/dbConfig");
+const FoodOrder = require("../Config/dbConfig");
 
-router.post("/foodOrder", async (req, res) => {
-    await knex("foodOrder").insert(req.body);
-    res.send("foodOrder are inserted !")
+
+//  POST Route
+router.post("/", async (req, res) => {
+    try {
+        const newOrder = new FoodOrder(req.body);
+        await newOrder.save();
+        res.send("Food order inserted successfully!");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error inserting food order");
+    }
 });
 
 module.exports = router;

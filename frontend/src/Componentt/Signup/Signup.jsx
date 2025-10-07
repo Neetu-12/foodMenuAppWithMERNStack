@@ -14,16 +14,19 @@ export default function Signup() {
   const submit = (e) => {
     e.preventDefault();
     let data = { userName, phoneNo, email, password }
+    console.log(userName, phoneNo, email, password);
+    
     axios.post("http://localhost:8000/user/register", data).then((result) => {
-      // console.log((result.data === "New registration done."));
+      console.log((result,"===================================="));
       if (result.data === "New registration done.") {
         alert("Registered successfully.");
         navigate("/Signin");
       } else {
         alert("Already registered , kindly try with another account with new password !")
-
+        
       }
     }).catch((err) => {
+      console.log(err);        
       alert(data)
     });
   }
