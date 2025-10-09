@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const foodOrderSchema = new mongoose.Schema(
   {
@@ -42,4 +42,6 @@ foodOrderSchema.pre("save", async function (next) {
   next();
 });
 
-module.exports = mongoose.model("FoodOrder", foodOrderSchema);
+const FoodOrder = mongoose.model("FoodOrder", userSchema);
+
+export default FoodOrder; 

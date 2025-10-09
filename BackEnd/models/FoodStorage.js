@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const foodStorageSchema = new mongoose.Schema(
   {
@@ -57,5 +57,6 @@ foodStorageSchema.pre("save", async function (next) {
   next();
 });
 
-module.exports = mongoose.model("Foodstorage", foodStorageSchema);
+const Foodstorage = mongoose.model("Foodstorage", userSchema);
 
+export default Foodstorage; 

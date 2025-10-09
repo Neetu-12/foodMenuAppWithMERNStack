@@ -1,32 +1,34 @@
-require("dotenv").config();
-const express = require("express");
+import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
 const app = express();
-const cors = require("cors")
+import cors from "cors";
+import userRouter from "./Router/userRouter.js";
 
 app.use(express.json())
 app.use(cors())
 
 const PORT = process.env.PORT || 8000;
 
-const db = require("./Config/dbConfig")
-db("conected");
+import db from "./Config/dbConfig.js";
+db("connected");
 
-const user = require("./Router/user")
-app.use("/user", user)
+app.use("/", userRouter);
 
-const menu = require("./Router/menu")
-app.use("/menus", menu)
+// const menu = require("./Router/menu")
+// app.use("/menus", menu)
  
-const info = require("./Router/information")
-app.use("/information", info)
+// const info = require("./Router/information")
+// app.use("/information", info)
 // const jwt = require("./Middleware/jwt");
 // app.use("/",jwt)
 
-const foodie = require("./Router/foodie")
-app.use("/foodie", foodie)
+// const foodie = require("./Router/foodie")
+// app.use("/foodie", foodie)
 
-const foodOrder = require("./Router/foodOrder")
-app.use("/order", foodOrder)
+// const foodOrder = require("./Router/foodOrder")
+// app.use("/order", foodOrder)
 
 
 app.listen(PORT, () => {

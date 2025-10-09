@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const menuSchema = new mongoose.Schema(
   {
@@ -38,5 +38,7 @@ menuSchema.pre("save", async function (next) {
   next();
 });
 
-module.exports = mongoose.model("Menu", menuSchema);
 // const food = await Foodstorage.find().populate("user_id", "name email");
+const Menu = mongoose.model("Menu", userSchema);
+
+export default Menu; 
