@@ -21,6 +21,11 @@ db("connected");
 
 app.use("/", userRouter);
 
+app.get('/', (req, res) => {
+    res.status(200).json({message:"Welcome to food menu app...."})
+});
+
+
 // const menu = require("./Router/menu")
 // app.use("/menus", menu)
  

@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/foodMenuAppWithMERNStack/static/css/main.87db417e.css",
+    "main.js": "/foodMenuAppWithMERNStack/static/js/main.b6f830e8.js",
+    "static/media/delivery.png": "/foodMenuAppWithMERNStack/static/media/delivery.a4736a6a22f4ea52afb3.png",
+    "static/media/mixupfood.png": "/foodMenuAppWithMERNStack/static/media/mixupfood.5083b6e8ac8fb332e9a8.png",
+    "static/media/home-foodi-4.png": "/foodMenuAppWithMERNStack/static/media/home-foodi-4.01c18c25a316e8fea3d1.png",
+    "static/media/img1.png": "/foodMenuAppWithMERNStack/static/media/img1.4bf2b4a8a4100891bbf5.png",
+    "static/media/fooditems.png": "/foodMenuAppWithMERNStack/static/media/fooditems.32617f1160d7bb5b853c.png",
+    "static/media/dinner.png": "/foodMenuAppWithMERNStack/static/media/dinner.2660f359ec8598fa11c3.png",
+    "index.html": "/foodMenuAppWithMERNStack/index.html",
+    "main.87db417e.css.map": "/foodMenuAppWithMERNStack/static/css/main.87db417e.css.map",
+    "main.b6f830e8.js.map": "/foodMenuAppWithMERNStack/static/js/main.b6f830e8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87db417e.css",
+    "static/js/main.b6f830e8.js"
+  ]
+}
