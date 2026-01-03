@@ -31,9 +31,7 @@ const foodOrderSchema = new mongoose.Schema(
   }
 );
 
-//
-// Auto-increment ID (similar to Knex 'increments')
-//
+// Auto-increment the "id" field
 foodOrderSchema.pre("save", async function (next) {
   if (this.isNew) {
     const lastOrder = await this.constructor.findOne({}, {}, { sort: { id: -1 } });
@@ -42,6 +40,6 @@ foodOrderSchema.pre("save", async function (next) {
   next();
 });
 
-const FoodOrder = mongoose.model("FoodOrder", userSchema);
+const FoodOrder = mongoose.model("FoodOrder", foodOrderSchema);
 
-export default FoodOrder; 
+export default FoodOrder;

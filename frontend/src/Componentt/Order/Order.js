@@ -57,11 +57,11 @@ export default function Order() {
               </button>
             </>
           ) : (lode === 'loding') ? (
-            <h1>Loading ... </h1>
+            <h1>Confirmation ... </h1>
           ) : (
             <div className="billing">
               <div className="billingcontainer">
-                <h1>Billing</h1>
+                <h1 className="billing-heading">~Billing~</h1>
                 <hr />
                 <div className="billingInfouser">
                   <div className="userinf maintab">
@@ -113,6 +113,8 @@ export default function Order() {
                   <li className="finaltotal">Total</li>
                   .........
                   <h5 className="finaltotalval">₹ {parseInt((data.price * 0.15)) + parseInt((data.price * 0.18)) + parseInt((data.price * 0.10)) + parseInt((data.price))}</h5>
+                  <hr />
+                  <h4>Your order is confirmed!</h4>
                 </div>
               </div>
             </div>

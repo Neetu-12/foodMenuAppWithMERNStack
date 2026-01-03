@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+// import bcrypt from "bcryptjs";
+// import jwt from "jsonwebtoken";
 
 const userSchema = new mongoose.Schema(
   {
@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // ✅ Adds createdAt & updatedAt
+    timestamps: true, //  Adds createdAt & updatedAt
   }
 );
 
@@ -63,20 +63,20 @@ const userSchema = new mongoose.Schema(
 //
 // 🔑 JWT Token Method
 //
-userSchema.methods.getSignedJwtToken = function () {
-  return jwt.sign(
-    { id: this._id, role: this.role },
-    process.env.JWT_SECRET,
-    { expiresIn: "7d" }
-  );
-};
+// userSchema.methods.getSignedJwtToken = function () {
+//   return jwt.sign(
+//     { id: this._id, role: this.role },
+//     process.env.JWT_SECRET,
+//     { expiresIn: "7d" }
+//   );
+// };
 
 //
 // 🔎 Password Comparison Method
 //
-userSchema.methods.matchPassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password);
-};
+// userSchema.methods.matchPassword = async function (enteredPassword) {
+//   return await bcrypt.compare(enteredPassword, this.password);
+// };
 
-const User = mongoose.model("User", userSchema); // ✅ singular model name is best practice
+const User = mongoose.model("User", userSchema); //  singular model name is best practice
 export default User;

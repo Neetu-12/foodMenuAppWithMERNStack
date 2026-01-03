@@ -14,25 +14,30 @@ export default function Signin() {
     let data = { email, password }
 
     axios
-      .post("http://localhost:8000/user/login", data)
+      .post("http://localhost:4000/login", data)
       .then((result) => {
-        console.log(result);
-        if (result.data === "somthing went wrong!" || result.data.token === "") {
-          alert("somthing went wrong. Kindly check you data or register");
-          navigate("/Signup");
-        } else {
-          localStorage.setItem("SetData", result.data.token); //send token in local storage for user's identification and validation.
+        console.log(result.data.user.name, "login page with token");
+
+        if (result.data.message === "Login successful") {
+          localStorage.setItem("SetData", result.data.token);
           Validate.setstatus(true);
-          // setuserdata(result.data.userdata);
-          alert("login successfully");
-          navigate("/Home");
+          // Store username in context
+          Validate.setmultiple({ ...Validate.multiple, userName: result.data.user.name });
+
+          alert("Login successful");
+          navigate("/foodMenuAppWithMERNStack"); // Home or dashboard page
+        }
+        else {
+          navigate("/foodMenuAppWithMERNStack/Signup");
+          alert("Something went wrong. Kindly check your data or register");
         }
       })
       .catch((err) => {
-        console.log(err);
-        alert("somthing went wrong. Kindly check you data or register");
-        navigate("/Signup");
+        console.error(err);
+        alert("Something went wrong. Kindly check your data or register===========");
+        // navigate("/foodMenuAppWithMERNStack/Signup");
       });
+
   }
 
   return (
