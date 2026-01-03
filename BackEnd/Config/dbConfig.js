@@ -11,6 +11,7 @@ const connectDB = async () => {
     console.error(`Error: ${error.message}`);
     process.exit(1); // stop app if DB fails
   }
-};
+}; 
 
-export default connectDB;
+export default connectDB; 
+
