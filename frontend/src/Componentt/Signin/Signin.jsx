@@ -28,14 +28,14 @@ export default function Signin() {
           navigate("/foodMenuAppWithMERNStack"); // Home or dashboard page
         }
         else {
-          navigate("/foodMenuAppWithMERNStack/Signup");
+          navigate("/Signup");
           alert("Something went wrong. Kindly check your data or register");
         }
       })
       .catch((err) => {
         console.error(err);
         alert("Something went wrong. Kindly check your data or register===========");
-        // navigate("/foodMenuAppWithMERNStack/Signup");
+        // navigate("/Signup");
       });
 
   }

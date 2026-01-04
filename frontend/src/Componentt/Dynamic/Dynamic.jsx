@@ -14,11 +14,11 @@ export const Dynamic = () => {
     if (sessionStorage.getItem("orderId")) { // token get
       sessionStorage.removeItem("orderId") // remove 
       sessionStorage.setItem("orderId", JSON.stringify(id))
-      navigate('/foodMenuAppWithMERNStack/Order')
+      navigate('/Order')
     }
     else {
       sessionStorage.setItem("orderId", JSON.stringify(id))
-      navigate('/foodMenuAppWithMERNStack/Order')
+      navigate('/Order')
     }
 
   }

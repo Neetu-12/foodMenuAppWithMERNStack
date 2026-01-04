@@ -21,7 +21,7 @@ export default function Signup() {
         // console.log(res.data, "========");
         if (res.data.message === "User registered successfully") {
           alert("Registered successfully.");
-          navigate("/foodMenuAppWithMERNStack/Signin");
+          navigate("/Signin");
         } else {
           alert("Already registered, kindly try with another account!");
         }

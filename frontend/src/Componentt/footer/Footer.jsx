@@ -36,7 +36,7 @@ export const Footer = () => {
         <li>Qualifications</li>
         <li>Email :- neetus21@navgurukul.org</li>
 
-        <li> &copy; 2023 <a href="/foodMenuAppWithMERNStack" className='foodMenu'>Foodmenu</a></li>
+        <li> &copy; 2023 <a href="/" className='foodMenu'>Foodmenu</a></li>
         <li> Made with <span class="heart">♥</span> remotely from Anywhere</li>
         {((window.location.href.split('/')[[3]]) === 'Dynamic') ? (<button onClick={() => {
           navigate('./FoodInfo')

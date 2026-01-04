@@ -16,20 +16,20 @@ export const Navbar = () => {
       console.log({ ...validator.multiple, userName: "" },"after setmultiple");
 
       alert("You have been logged out!");
-      navigate("/foodMenuAppWithMERNStack/Signin");
+      navigate("/Signin");
     }
   };
 
   // const selectMenu = (foodtype) => {
   //   sessionStorage.setItem("foodtype", foodtype);
-  //   navigate("/foodMenuAppWithMERNStack/Dynamic");
+  //   navigate("/Dynamic");
   // };
 
   return (
     <div className='Navbar'>
       <div className="Navbar-Content">
         <div className="main-home-page">
-          <Link to="/foodMenuAppWithMERNStack" className="home-page">Home</Link>
+          <Link to="/" className="home-page">Home</Link>
         </div>
 
         <div className='links'>
@@ -42,8 +42,8 @@ export const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/foodMenuAppWithMERNStack/Signup" className='nav1'>Signup</Link>
-              <Link to="/foodMenuAppWithMERNStack/Signin" className='nav1'>Signin</Link>
+              <Link to="/Signup" className='nav1'>Signup</Link>
+              <Link to="/Signin" className='nav1'>Signin</Link>
             </>
           )}
         </div>
