@@ -35,7 +35,7 @@ export default function Signin() {
       .catch((err) => {
         console.error(err);
         alert("Something went wrong. Kindly check your data or register===========");
-        // navigate("/Signup");
+        navigate("/Signup");
       });
 
   }
