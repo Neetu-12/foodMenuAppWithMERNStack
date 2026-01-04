@@ -25,8 +25,10 @@ export const FoodInfo = () => {
     fomeData.append("price", price)
     // fomeData = { foodName, foodinfo, foodtype, image }
     axios
-      .post("http://localhost:8000/information", fomeData)
+      .post(`${process.env.REACT_APP_API_BASE_URL}/information`, fomeData)
       .then((result) => {
+        console.log(result,"add new food..........");
+        
         if (result.data == "Inserted!") {
           alert("Data inserted successfully!")
           navigate("/Home");
@@ -37,7 +39,7 @@ export const FoodInfo = () => {
       })
       .catch(() => {
         alert("somthing went wrong. Kindly check you data or Foodinfo");
-        navigate("/Signup");
+        // navigate("/Signup");
       });
   }
 

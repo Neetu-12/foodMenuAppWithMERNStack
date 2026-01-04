@@ -8,8 +8,8 @@ const AppProvider = ({ children }) => {
     // const [foodValidator, setfoodValidator] = useState("")
     useEffect(() => {
         if (localStorage.getItem("SetData")) {
-            // console.log(axios.get("http://localhost:4000/login") , 'At the time of context.....checking aPi is working or not');
-            axios.get("http://localhost:8000/user/auth", {
+            // console.log(axios.get(`${process.env.REACT_APP_API_BASE_URL}/login`) , 'At the time of context.....checking aPi is working or not');
+            axios.get(`${process.env.REACT_APP_API_BASE_URL}/user/auth`, {
                 
                 headers: {
                     signtoken: localStorage.getItem("SetData")

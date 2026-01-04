@@ -16,7 +16,7 @@ export default function Signup() {
     let data = { name, email, password }
     console.log(name, email, password);
 
-    axios.post("http://localhost:4000/register", data)
+    axios.post(`${process.env.REACT_APP_API_BASE_URL}/register`, data)
       .then((res) => {
         // console.log(res.data, "========");
         if (res.data.message === "User registered successfully") {

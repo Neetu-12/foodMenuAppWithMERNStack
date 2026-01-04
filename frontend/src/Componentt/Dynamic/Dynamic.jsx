@@ -24,7 +24,7 @@ export const Dynamic = () => {
   }
   const [itemListe, setitemListe] = useState([])
   useEffect(() => {
-    axios.get(`http://localhost:8000/information/${sessionStorage.getItem("foodtype")}`).then((result) => {
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/information/${sessionStorage.getItem("foodtype")}`).then((result) => {
       setitemListe(result.data)
     }).catch((err) => {
       setitemListe(foodinfo.filter(x => x.foodtype === sessionStorage.getItem("foodtype")));

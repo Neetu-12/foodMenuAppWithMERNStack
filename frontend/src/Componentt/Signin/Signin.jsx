@@ -14,7 +14,7 @@ export default function Signin() {
     let data = { email, password }
 
     axios
-      .post("http://localhost:4000/login", data)
+      .post(`${process.env.REACT_APP_API_BASE_URL}/login`, data)
       .then((result) => {
         console.log(result.data.user.name, "login page with token");
 
