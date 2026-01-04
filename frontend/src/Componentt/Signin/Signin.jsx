@@ -25,7 +25,7 @@ export default function Signin() {
           Validate.setmultiple({ ...Validate.multiple, userName: result.data.user.name });
 
           alert("Login successful");
-          navigate("/foodMenuAppWithMERNStack"); // Home or dashboard page
+          navigate("/"); // Home or dashboard page
         }
         else {
           navigate("/Signup");
