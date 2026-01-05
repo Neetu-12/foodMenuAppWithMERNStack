@@ -9,7 +9,7 @@ const foodStorageSchema = new mongoose.Schema(
     user_id: {
       type: mongoose.Schema.Types.ObjectId, // Reference to User
       ref: "User",
-      required: true,
+      // required: true,
     },
     foodtype: {
       type: String,
@@ -57,6 +57,6 @@ foodStorageSchema.pre("save", async function (next) {
   next();
 });
 
-const Foodstorage = mongoose.model("Foodstorage", userSchema);
+const Foodstorage = mongoose.model("Foodstorage", foodStorageSchema);
 
 export default Foodstorage; 

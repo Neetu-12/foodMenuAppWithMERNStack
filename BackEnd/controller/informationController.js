@@ -1,5 +1,6 @@
 import cloudinary from "../Middleware/cloudnery.js";
 import Information from "../models/Information.js"; // Assuming you have an Information model
+import Foodstorage from "../models/FoodStorage.js"
 
 // POST controller — upload image and insert data
 export const createInformation = async (req, res) => {
@@ -24,10 +25,39 @@ export const createInformation = async (req, res) => {
 // GET controller — get information by type
 export const getInformationByType = async (req, res) => {
   try {
-    const data = await Information.find({ type: req.params.type });   
+    const data = await Information.find({ type: req.params.type });
     res.send(data);
   } catch (error) {
     console.error("Error fetching information:", error);
     res.status(500).send("Error fetching data.");
   }
 };
+
+
+// add data function
+export const addNewFood = async (req, res) => {
+  try {
+    const { foodName, foodtype, foodinfo, price, imageURL } = req.body;
+
+    console.log(foodName, foodtype, foodinfo, price, imageURL);
+    
+    // Create new Items      
+    const newUser = await Foodstorage.create({
+      foodName,
+      foodtype,
+      foodinfo,
+      price,
+      imageURL
+    });
+
+    // Success response
+    res.status(201).json({
+      message: "New items added successfully!",
+      newUser
+    });
+  } catch (error) {
+    console.error("Error at the time of items add :", error);
+    res.status(500).json({ message: "Items not able to add.", error: error.message });
+  }
+};
+

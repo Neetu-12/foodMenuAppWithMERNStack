@@ -25,7 +25,7 @@ export const FoodInfo = () => {
     fomeData.append("price", price)
     // fomeData = { foodName, foodinfo, foodtype, image }
     axios
-      .post(`${process.env.REACT_APP_API_BASE_URL}/information`, fomeData)
+      .post(`${process.env.REACT_APP_API_BASE_URL}/addNewFood`, fomeData)
       .then((result) => {
         console.log(result,"add new food..........");
         

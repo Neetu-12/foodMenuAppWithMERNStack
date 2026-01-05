@@ -10,6 +10,7 @@ import cors from "cors";
 
 app.use(cookieParser());
 import userRouter from "./Router/userRoutes.js";
+import information from "./Router/informationRoutes.js";
 
 app.use(express.json())
 app.use(cors())
@@ -20,6 +21,7 @@ import db from "./Config/dbConfig.js";
 db("connected");
 
 app.use("/", userRouter);
+app.use("/", information);
 
 app.get('/', (req, res) => {
     res.status(200).json({message:"Welcome to food menu app...."})
