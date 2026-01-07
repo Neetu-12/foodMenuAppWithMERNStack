@@ -38,9 +38,9 @@ export const Footer = () => {
 
         <li> &copy; 2023 <a href="/" className='foodMenu'>Foodmenu</a></li>
         <li> Made with <span class="heart">♥</span> remotely from Anywhere</li>
-        {((window.location.href.split('/')[[3]]) === 'Dynamic') ? (<button onClick={() => {
+        {/* {((window.location.href.split('/')[[3]]) === 'Dynamic') ? (<button onClick={() => {
           navigate('./FoodInfo')
-        }} className='button'>Add food Items </button>) : ("")}
+        }} className='button'>Add food Items </button>) : ("")} */}
 
       </ul>
     </div>
