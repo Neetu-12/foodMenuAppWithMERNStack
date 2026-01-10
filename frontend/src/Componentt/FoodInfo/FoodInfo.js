@@ -29,7 +29,7 @@ export const FoodInfo = () => {
       .then((result) => {
         console.log(result, "add new food..........");
 
-        if (result.data.message == "New items added successfully!") {
+        if (result.data.message === "New items added successfully!") {
           alert("Data inserted successfully!")
           navigate("/");
         }
