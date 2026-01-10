@@ -9,12 +9,12 @@ const foodOrderSchema = new mongoose.Schema(
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User", // reference to User model
-      required: true,
+      // required: true,
     },
     foodId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Foodstorage", // reference to Foodstorage model
-      required: true,
+      // required: true,
     },
     price: {
       type: String,

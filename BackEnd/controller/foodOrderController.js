@@ -3,6 +3,8 @@ import FoodOrder from "../models/FoodOrder.js";
 export const createFoodOrder = async (req, res) => {
   try {
     const newOrder = new FoodOrder(req.body);
+    // console.log(newOrder,".......");
+    
     await newOrder.save();
     res.status(201).send("Food ordered successfully!");
   } catch (error) {

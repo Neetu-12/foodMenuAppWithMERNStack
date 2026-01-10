@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.css'
 import snacks from '../images/fooditems.png'
-import breakfast from '../images/fooditems.png'
+import breakfast from '../images/chaumeen.png'
 import lunch from '../images/lunch.png'
 import dinner from '../images/dinner.png'
 // import { useGlobalContext } from '../Context/context'
@@ -34,7 +34,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="slot" onClick={() => { foodtype("Snacks") }}>
+      <div className="slot" onClick={() => { foodtype("snack") }}>
         <div className='main-span'>
           <span className='span1'><strong>*Snack:-*</strong> Everyone knows what a snack is: It’s that thing that happens between meals, that thing you didn’t have to prep or cook or otherwise expend any meaningful effort to propel into your mouth. It’s that thing that came out of a bag.
           </span>

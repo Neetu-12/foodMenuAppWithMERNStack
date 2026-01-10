@@ -1,23 +1,60 @@
 import React, { useState } from "react";
 import './Order.css';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Order() {
   let data = JSON.parse(sessionStorage.getItem("orderId"));
-  console.log(data);
+  // console.log(data);
   const [user, setuser] = useState("");
-  const [foodinfo, setfoodinfo] = useState("");
+  const [homeAddress, setAddress] = useState("");
   const [contactinfo, setcontactinfo] = useState("");
   const [lode, setlode] = useState('address');
+  const navigate = useNavigate();
+
   let billinglod = () => {
-    setlode('loding')
-    setTimeout(() => {
-      setlode('billing')
-    }, 1000);
-  }
+     setlode('loding'); 
+     setTimeout(() => { setlode('billing') }, 1000); }
+
+  let submit = (e) => {
+    e.preventDefault();
+
+    // 🔥 VALIDATION (WAS WRONG PLACE BEFORE)
+    if (!user || !homeAddress || !contactinfo) {
+      alert("Kindly fill your information ...!");
+      return;
+    }
+
+    billinglod(); // move to loading state
+    let userData = { user, homeAddress, contactinfo };
+    console.log(userData);
+
+    axios.post("http://localhost:4000/foodorder", userData)
+      .then((res) => {
+        console.log(res);
+        
+        if (res.data.message === "Food ordered successfully!") {
+          alert("Food ordered successfully...");
+          navigate("/");
+        } else {
+          console.log(res.data);
+          
+          alert(res.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err.response || err);
+        alert(err.response?.data?.message || "Something went wrong");
+      });
+
+  };
+
+
   return (
     <div>
       <div className="food">
-        <form className="foodform foodformorder">
+        <form className="foodform foodformorder" onSubmit={submit}>
+          {/* <form className="foodform foodformorder"> */}
           {(lode === 'address') ? (
             <>
               <h1>Place your order</h1>
@@ -32,12 +69,12 @@ export default function Order() {
                 </label>
               </div>
 
-              <div className="FoodInfo">
+              <div className="Foodinfo">
                 <label>
                   <span className="tagname"> Enter Your Delivery Address:</span>
                   <input
                     type="text"
-                    onChange={(e) => setfoodinfo(e.target.value)}
+                    onChange={(e) => setAddress(e.target.value)}
                   />
                 </label>
               </div>
@@ -51,10 +88,14 @@ export default function Order() {
                   />
                 </label>
               </div>
+              {/* <button className="foodbutton" type="button" onClick={(submit) => { ((homeAddress && contactinfo && user) ? billinglod() : (alert('Kindly fill your information ...!'))) }}>
+                Order Now!
+              </button> */}
 
-              <button className="foodbutton" type="button" onClick={(e) => { ((foodinfo && contactinfo && user) ? billinglod() : (alert('Kindly fill your information ...!'))) }}>
+              <button className="foodbutton" type="submit">
                 Order Now!
               </button>
+
             </>
           ) : (lode === 'loding') ? (
             <h1>Confirmation ... </h1>
@@ -72,7 +113,7 @@ export default function Order() {
                   <div className="maintab userloca">
                     <li className="userlocao">Location</li>
                     .........
-                    <h5 className="userlocaoval">{foodinfo}</h5>
+                    <h5 className="userlocaoval">{homeAddress}</h5>
                   </div>
                   <div className="maintab userloca">
                     <li className="userlocao">Contact</li>

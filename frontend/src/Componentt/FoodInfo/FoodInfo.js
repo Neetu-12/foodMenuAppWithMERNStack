@@ -12,32 +12,34 @@ export const FoodInfo = () => {
   const [price, setprice] = useState("");
   const navigate = useNavigate();
   // const Validate = useGlobalContext();
-  const [image, setimage] = useState("");
+  const [imageURL, setimageURL] = useState("");
 
   const submit = () => {
     // e.preventDefault(); //refresh na bar bar that's why used this function.
     let fomeData = new FormData()
-    fomeData.append("image", image)
     fomeData.append("user_id", "5")
     fomeData.append("foodName", foodName)
     fomeData.append("foodinfo", foodinfo)
     fomeData.append("foodtype", foodtype)
     fomeData.append("price", price)
+    fomeData.append("imageURL", imageURL)
     // fomeData = { foodName, foodinfo, foodtype, image }
     axios
-      .post(`${process.env.REACT_APP_API_BASE_URL}/addNewFood`, fomeData)
+      .post(`${process.env.REACT_APP_API_BASE_URL}/addNewFood`, { foodName, foodinfo, foodtype, price, imageURL })
       .then((result) => {
-        console.log(result,"add new food..........");
-        
-        if (result.data == "Inserted!") {
+        console.log(result, "add new food..........");
+
+        if (result.data.message == "New items added successfully!") {
           alert("Data inserted successfully!")
-          navigate("/Home");
+          navigate("/");
         }
         else {
           alert("Something went wrong please try again!")
         }
       })
-      .catch(() => {
+      .catch((err) => {
+        console.log(err);
+
         alert("somthing went wrong. Kindly check you data or Foodinfo");
         // navigate("/Signup");
       });
@@ -81,7 +83,14 @@ export const FoodInfo = () => {
           <div className="fname-signin">
             <label>
               Image:
-              <input type="file" name='file' onChange={(e) => { setimage(e.target.files[0]) }} />
+              {/* <input type="file" name='file' onChange={(e) => { setimage(e.target.files[0]) }} /> */}
+              <input
+                type="text"
+                placeholder="Enter image URL"
+                value={imageURL}
+                onChange={(e) => setimageURL(e.target.value)}
+              />
+
             </label>
           </div>
 

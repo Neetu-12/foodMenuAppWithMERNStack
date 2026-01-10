@@ -11,19 +11,14 @@ const foodStorageSchema = new mongoose.Schema(
       ref: "User",
       // required: true,
     },
-    foodtype: {
-      type: String,
-      required: [true, "Food type is required"],
-      trim: true,
-    },
-    imageURL: {
-      type: String,
-      required: [true, "Image URL is required"],
-      trim: true,
-    },
     foodName: {
       type: String,
       required: [true, "Food name is required"],
+      trim: true,
+    },
+    foodtype: {
+      type: String,
+      required: [true, "Food type is required"],
       trim: true,
     },
     foodinfo: {
@@ -35,6 +30,11 @@ const foodStorageSchema = new mongoose.Schema(
       type: String,
       required: [true, "Price is required"],
       trim: true,
+    },
+    imageURL: {
+      type: String,
+      required: [true, "Image URL is required"],
+      // trim: true,
     },
     create_at: {
       type: Date,

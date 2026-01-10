@@ -26,6 +26,8 @@ export const createInformation = async (req, res) => {
 export const getInformationByType = async (req, res) => {
   try {
     const data = await Information.find({ type: req.params.type });
+    console.log(data,'func getInformationByType');
+    
     res.send(data);
   } catch (error) {
     console.error("Error fetching information:", error);
@@ -39,8 +41,8 @@ export const addNewFood = async (req, res) => {
   try {
     const { foodName, foodtype, foodinfo, price, imageURL } = req.body;
 
-    console.log(foodName, foodtype, foodinfo, price, imageURL);
-    
+    // console.log(foodName, foodtype, foodinfo, price, imageURL,"Func addNewFood");
+
     // Create new Items      
     const newUser = await Foodstorage.create({
       foodName,
@@ -61,3 +63,22 @@ export const addNewFood = async (req, res) => {
   }
 };
 
+
+
+// router.get(
+//   "/foodorder/information/:foodtype",
+//   async (req, res) => {
+//     try {
+//       const { foodtype } = req.params;
+
+//       console.log("Food Type 👉", foodtype);
+
+//       // Example DB query
+//       const foods = await Food.find({ type: foodtype });
+
+//       res.status(200).json(foods);
+//     } catch (err) {
+//       res.status(500).json({ message: "Server error" });
+//     }
+//   }
+// );
